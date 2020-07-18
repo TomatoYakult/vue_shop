@@ -18,6 +18,7 @@ module.exports = {
     "space-before-function-paren": 0,
     "semi": "off",
     "no-useless-return": "off",
-    "keyword-spacing": "off"
+    "keyword-spacing": "off",
+    "no-irregular-whitespace": "off"
   }
 }

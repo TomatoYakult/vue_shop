@@ -2,7 +2,7 @@
   <div class="login_container">
     <div class="login_box">
       <div class="avatar_box">
-        <img src="../assets/logo.png">
+        <img src="../assets/img/logo.png">
       </div>
       <el-form :model="loginForm" :rules="loginFormRules" ref="loginFormRef" class="login_form">
         <el-form-item prop="username">
@@ -28,8 +28,8 @@
       return {
         // 这是登录表单的数据绑定对象
         loginForm: {
-          username: '',
-          password: ''
+          username: 'admin',
+          password: '123456'
         },
         loginFormRules: {
           username: [
