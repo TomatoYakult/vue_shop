@@ -9,6 +9,7 @@ body,
 
 .el-breadcrumb {
   margin-bottom: 20px;
+  font-size: 12px;
 }
 
 .el-card {
@@ -22,6 +23,7 @@ body,
 
 .el-table {
   margin-top: 20px;
+  font-size: 12px;
 }
 
 .el-pagination {
@@ -30,4 +32,21 @@ body,
 
 .el-scrollbar__wrap {
   height: 200px;
+}
+
+.myBreadCrumbItem > .is-link {
+  font-weight: 500 !important;
+  color: #606266;
+}
+
+.el-steps {
+  margin: 20px 0;
+}
+
+.el-step__title {
+  font-size: 13px;
+}
+
+.ql-editor {
+  min-height: 290px;
 }
