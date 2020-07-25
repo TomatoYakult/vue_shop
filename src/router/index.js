@@ -12,6 +12,7 @@ import GoodsList from '../components/goods/List.vue'
 import Add from '../components/goods/Add.vue'
 import Edit from '../components/goods/Edit.vue'
 import Order from '../components/order/Order.vue'
+import Report from '../components/report/Report.vue'
 
 // 解决vue-router在3.0版本以上重复点击ElementUI导航栏中的菜单报错的情况
 const originalPush = VueRouter.prototype.push
@@ -38,7 +39,8 @@ const routes = [
       { path: '/goods', component: GoodsList },
       { path: '/goods/add', component: Add },
       { path: '/goods/edit', component: Edit, name: 'edit' },
-      { path: '/orders', component: Order }
+      { path: '/orders', component: Order },
+      { path: '/reports', component: Report }
     ]
   }
 ]
