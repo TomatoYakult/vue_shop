@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Button, Form, FormItem, Input, Message, Container, Header, Aside, Main, Menu, Submenu, MenuItem, Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination, Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Step, Steps, Checkbox, CheckboxGroup, Upload, Image } from 'element-ui'
+import { Button, Form, FormItem, Input, Message, Container, Header, Aside, Main, Menu, Submenu, MenuItem, Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination, Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Step, Steps, Checkbox, CheckboxGroup, Upload, Image, Timeline, TimelineItem } from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Form)
@@ -37,6 +37,8 @@ Vue.use(Checkbox)
 Vue.use(CheckboxGroup)
 Vue.use(Upload)
 Vue.use(Image)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 // 将消息提示组件挂载到Vue的原型对象上
 Vue.prototype.$message = Message
 // 将弹框组件挂载到Vue的原型对象上
