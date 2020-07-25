@@ -16,14 +16,26 @@ import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 // 引入axios
 import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 // axios请求拦截
 axios.interceptors.request.use(config => {
+  // 发请求时 展示进度条
+  NProgress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
 })
+// response响应拦截
+axios.interceptors.response.use(config => {
+  // 响应完成隐藏进度条
+  NProgress.done()
+  return config
+})
+
 // 将axios挂载到Vue的原型对象上
 Vue.prototype.$http = axios
 
