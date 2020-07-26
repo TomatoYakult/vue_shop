@@ -136,7 +136,6 @@
         this.picList = this.editForm.pics.map(item => {
           return { name: item.goods_id, url: item.pics_sma_url };
         });
-        console.log('this.editForm :>> ', this.editForm);
       },
       async getCateList() {
         const { data: res } = await this.$http.get('categories');
@@ -189,9 +188,6 @@
         this.editForm.pics.push(picInfo);
       },
       async edit() {
-        console.log('this.editForm :>> ', this.editForm);
-        console.log('this.manyTableData :>> ', this.manyTableData);
-        console.log('this.onlyTableData :>> ', this.onlyTableData);
         this.form.id = this.editForm.goods_id;
         this.form.goods_name = this.editForm.goods_name;
         this.form.goods_price = this.editForm.goods_price;
