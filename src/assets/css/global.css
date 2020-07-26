@@ -34,7 +34,7 @@ body,
   height: 200px;
 }
 
-.myBreadCrumbItem > .is-link {
+.myBreadCrumbItem>.is-link {
   font-weight: 500 !important;
   color: #606266;
 }
@@ -49,4 +49,11 @@ body,
 
 .ql-editor {
   min-height: 290px;
+}
+
+.el-calendar-table .el-calendar-day {
+  height: 75px;
+  text-align: center;
+  line-height: 62px;
+  font-size: 20px;
 }

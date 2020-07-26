@@ -28,8 +28,8 @@
       return {
         // 这是登录表单的数据绑定对象
         loginForm: {
-          username: 'admin',
-          password: '123456'
+          username: '',
+          password: ''
         },
         loginFormRules: {
           username: [
@@ -40,8 +40,43 @@
             { required: true, message: '请输入密码', trigger: 'blur' },
             { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' }
           ]
-        }
+        },
+        date: new Date(),
+        dateMsg: '',
+        dateIcon: ''
       }
+    },
+    created() {
+      const y = this.date.getFullYear();
+      const m = (this.date.getMonth() + 1).toString().padStart(2, '0');
+      const d = (this.date.getDate()).toString().padStart(2, '0');
+      const hh = (this.date.getHours()).toString().padStart(2, '0');
+      switch (hh) {
+      case 6:
+      case 7:
+      case 19:
+      case 20:
+      case 21:
+        this.dateIcon = 'el-icon-sunrise-1';
+        break;
+      case 8:
+      case 9:
+      case 10:
+      case 11:
+      case 12:
+      case 13:
+      case 14:
+      case 15:
+      case 16:
+      case 17:
+      case 18:
+        this.dateIcon = 'el-icon-sunny';
+        break;
+      default:
+        this.dateIcon = 'el-icon-moon';
+        break;
+      }
+      this.dateMsg = `${y}年${m}月${d}日`
     },
     methods: {
       // 重置方法
@@ -59,6 +94,14 @@
           if (res.meta.status !== 200) return this.$message.error('用户名或密码错误，请重试！');
           // 登录成功message提示
           this.$message.success('登录成功！');
+          console.log('this.dateMsg :>> ', this.dateMsg);
+          // 登录成功notification提示
+          this.$notify({
+            title: `${res.data.username} 您好`,
+            iconClass: this.dateIcon,
+            dangerouslyUseHTMLString: true,
+            message: `<span>今天是${this.dateMsg}，希望您今天的工作能有个好心情哦~</span>`
+          });
           // 1. 将后台传递过来的token值存放到客户端的sessionStorage中
           //   1.1 项目中除了登录的API接口都需要在成功登录之后才能访问
           //   1.2 token只在当前网站打开期间生效，所以存放在sessionStorage中
